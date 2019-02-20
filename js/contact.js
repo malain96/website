@@ -19,17 +19,19 @@ $(function() {
             }
             $this = $("#sendMessageButton");
             $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
-            $.ajax({
-                url: "././mail/contact_me.php",
-                type: "POST",
-                data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
-                },
-                cache: false,
-                success: function() {
+            Email.send({
+                SecureToken : '54861b8e-d618-4528-b4de-330e75aefc5a',
+                To : 'alain.mathieu1996@gmail.com',
+                From : email,
+                Subject : 'Website Contact Form: ' + name,
+                Body : 'You have received a new message from your website contact form.<br>' +
+                    'Here are the details: <br>' +
+                    'Name: ' + name + '<br>' +
+                    'Email: ' + email + '<br>' +
+                    'Phone: ' + phone +'<br>' +
+                    'Message:<br> ' +message
+            }).then( function (message) {
+                if(message === 'OK'){
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -40,8 +42,8 @@ $(function() {
                         .append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
-                },
-                error: function() {
+                }else {
+
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -50,13 +52,13 @@ $(function() {
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
-                },
-                complete: function() {
-                    setTimeout(function() {
-                        $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
-                    }, 1000);
                 }
-            });
+                setTimeout(function() {
+                    $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+                }, 1000)
+            }
+        )
+
         },
         filter: function() {
             return $(this).is(":visible");
