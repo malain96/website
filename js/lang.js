@@ -49,6 +49,8 @@ function loadText (){
     $('#message').attr('placeholder', language.placeholderMessage)
         .attr('data-validation-required-message', language.messageRequired);
     $('#sendMessageButton').text(language.sendMessage);
+    $('#resumeLink').attr('href',language.resumeLink);
+    $('#resumeIcon').attr('title',language.altResume);
 }
 
 $(document).ready(function(){

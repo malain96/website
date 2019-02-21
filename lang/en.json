@@ -29,5 +29,7 @@
   "sendMessage" : "Send Message",
   "successMessage" : "Your message has been sent.",
   "sorry" : "Sorry ",
-  "errorMessage" : ", it seems that my mail server is not responding. Please try again later!"
+  "errorMessage" : ", it seems that my mail server is not responding. Please try again later!",
+  "resumeLink" : "files/Mathieu_Alain_cv_en.pdf",
+  "altResume" : "Resume"
 }

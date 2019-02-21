@@ -29,5 +29,7 @@
   "sendMessage" : "Envoyer",
   "successMessage" : "Votre message a bien été envoyé.",
   "sorry" : "Désolé ",
-  "errorMessage" : ", il semble que mon serveur de messagerie ne réponde pas. Veuillez réessayer plus tard!"
+  "errorMessage" : ", il semble que mon serveur de messagerie ne réponde pas. Veuillez réessayer plus tard!",
+  "resumeLink" : "files/Mathieu_Alain_cv_fr.pdf",
+  "altResume" : "CV"
 }
