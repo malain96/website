@@ -575,3 +575,7 @@ span.about-me {
 .form-group :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #3F3250;
 }
+
+.contact-row{
+    padding-bottom: 5px;
+}

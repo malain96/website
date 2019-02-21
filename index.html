@@ -5,6 +5,7 @@
     <title>Mathieu Alain</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-grid.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css"/>
@@ -26,22 +27,20 @@
                     </a>
                 </div>
                 <hr class="hide">
-                <div class="sidebar-subtitle hide">
-                    Software Developer
-                </div>
+                <div class="sidebar-subtitle hide" id="menuTitle"></div>
             </div>
 
             <hr>
 
             <ul class="sidebar-nav">
                 <li>
-                    <a href="#about" ><i class="fas fa-user-circle"></i><span class="hide"> Me</span></a>
+                    <a href="#about" ><i class="fas fa-user-circle"></i><span class="hide" id="aboutMenu"></span></a>
                 </li>
                 <li>
-                    <a href="#projects"><i class="fas fa-briefcase"></i><span class="hide"> Projects</span></a>
+                    <a href="#projects"><i class="fas fa-briefcase"></i><span class="hide" id="projectsMenu"></span></a>
                 </li>
                 <li>
-                    <a href="#contact"><i class="fas fa-at"></i><span class="hide"> Contact Me</span></a>
+                    <a href="#contact"><i class="fas fa-at"></i><span class="hide" id="contactMenu"></span></a>
                 </li>
             </ul>
 
@@ -54,7 +53,17 @@
                     <a href="https://github.com/malain96/" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                </div>
+            </div>
+
+            <hr>
+
+            <div class="sidebar-footer text-center">
+                    <a href="#" onclick="setLanguage('en')">
+                        <i class="flag-icon flag-icon-gb small"></i>
+                    </a>
+                    <a href="#" onclick="setLanguage('fr')">
+                        <i class="flag-icon flag-icon-fr small"></i>
+                    </a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -67,7 +76,7 @@
                     <div class="intro-text">
                         <div class="intro-lead-in">Mathieu Alain</div>
                         <hr/>
-                        <div class="intro-heading">Software Developer</div>
+                        <div class="intro-heading" id="title"></div>
                     </div>
                 </div>
             </header>
@@ -77,7 +86,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 text-center">
-                                <h2 class="section-heading text-uppercase">About Me</h2>
+                                <h2 class="section-heading text-uppercase" id="aboutTitle"></h2>
                                 <hr>
                             </div>
                         </div>
@@ -86,19 +95,14 @@
                                 <img class="rounded-circle img-fluid about-image" src="img/about/1.png" alt="">
                             </div>
                             <div id="about-details" class="col-sm-6">
-                                <div class="details"><span class="details-header">Name : </span> Mathieu Alain</div>
-                                <div class="details"><span class="details-header">Age : </span> <span class="age"></span></div>
-                                <div class="details"><span class="details-header">Location : </span> Angers, France</div>
+                                <div class="details"><span class="details-header" id="nameSpan"></span> Mathieu Alain</div>
+                                <div class="details"><span class="details-header" id="ageSpan"></span> <span class="age"></span></div>
+                                <div class="details"><span class="details-header" id="locationSpan"></span> Angers, France</div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-8 offset-sm-2">
-                                <div class="about-me">
-                                    <span class="about-me">My name is Mathieu Alain - Mathieu is my first name by the way. I'm <span class="age"></span> and I live near a beautiful city named Angers, France.</span>
-                                    <span class="about-me">I'm currently studying to obtain a Master's degree as an International project manager in IT and Networks at ESAIP. I'm also doing an internship in an IT company named Orkeis where I work on a few projects in ASP.NET.</span>
-                                    <span class="about-me">I like to spend my free time playing video games, enjoying a football game or a beer with my friends.</span>
-                                    <span class="about-me">If you want to get more information about me feel free to visit <a href="https://github.com/malain96/" target="_blank">my LinkedIn</a> or you can get my resume by clicking <a href="files/Mathieu_Alain_CV.pdf" target="_blank">here</a>.</span>
-                                </div>
+                                <div class="about-me" id="aboutMeText"></div>
                             </div>
                         </div>
                     </div>
@@ -111,22 +115,20 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 text-center">
-                            <h2 class="section-heading text-uppercase">Projects</h2>
+                            <h2 class="section-heading text-uppercase" id="projectsTitle"></h2>
                             <hr>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="intro col-sm-12">
-                            Here, you can find some open source projects I worked on. I can't showcase most of the projects I worked on because they are proprietary to the company where I was working at the time. I'm hoping to work on more open-source projects during my free time. You can find their source code on my <a href="https://github.com/malain96" target="_blank">github</a>.
-                        </div>
+                        <div class="intro col-sm-12" id="projectsIntro"></div>
                     </div>
                     <div class="row">
                         <div class="col-12 ">
                             <div class="card">
                                 <img class="card-img-top" src="img/projects/saint-hubert.png" alt="Saint-Hubert">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Saint-Hubert</h5>
-                                    <p class="card-text text-justify">Saint-Hubert is a web application based on PHP - Laravel to manage a hunting club. This app was created to answer the needs of a specific French hunting club and is only available in French for now.</p>
+                                    <h5 class="card-title" id="saintHubertTitle"></h5>
+                                    <p class="card-text text-justify" id="saintHubertBody"></p>
                                     <a href="https://github.com/malain96/saint-hubert" class="btn btn-custom" target="_blank"><i class="fab fa-github"></i> Github</a>
                                 </div>
                             </div>
@@ -138,8 +140,8 @@
                                 <div class="card">
                                     <img class="card-img-top" src="img/projects/website.png" alt="My personal website">
                                     <div class="card-body text-center">
-                                        <h5 class="card-title">My personal website</h5>
-                                        <p class="card-text text-justify">This is my personal web site. The one you are visiting right now. It was made using Bootstrap and some custom CSS.</p>
+                                        <h5 class="card-title" id="websiteTitle"></h5>
+                                        <p class="card-text text-justify" id="websiteBody"></p>
                                         <a href="https://github.com/malain96/website" class="btn btn-custom" target="_blank"><i class="fab fa-github"></i> Github</a>
                                     </div>
                                 </div>
@@ -151,8 +153,8 @@
                             <div class="card">
                                 <img class="card-img-top" src="img/projects/db-saver.png" alt="DB Saver">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">DB-Saver</h5>
-                                    <p class="card-text">DB Saver is a small Python script that I developed to save easily and simply my databases.</p>
+                                    <h5 class="card-title" id="dbSaverTitle">DB-Saver</h5>
+                                    <p class="card-text" id="dbSaverBody"></p>
                                     <a href="https://github.com/malain96/DB-Saver" class="btn btn-custom" target="_blank"><i class="fab fa-github"></i> Github</a>
                                 </div>
                             </div>
@@ -168,65 +170,59 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 text-center">
-                            <h2 class="section-heading text-uppercase">Contact Me</h2>
+                            <h2 class="section-heading text-uppercase" id="contactTitle"></h2>
                             <hr/>
                         </div>
                     </div>
-                    <div class="intro col-sm-12">
-                        Feel free to contact me for any personal or business inquiries by email at <a href="mailto:alain.mathieu1996@gmail.com" target="_top">alain.mathieu1996@gmail.com </a> or by filling this form.
-                    </div>
+                    <div class="intro col-sm-12" id="contactIntro"></div>
                     <div class="row">
                         <div class="col-lg-12">
                             <form id="contactForm" name="sentMessage" novalidate>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="name" type="text" placeholder="Your Name *" required data-validation-required-message="Please enter your name.">
+                                            <input class="form-control" id="name" type="text" required>
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" id="email" type="email" placeholder="Your Email *" required data-validation-required-message="Please enter your email address.">
+                                            <input class="form-control" id="email" type="email" required>
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone">
+                                            <input class="form-control" id="phone" type="tel">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <textarea class="form-control" id="message" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
+                                            <textarea class="form-control" id="message" required></textarea>
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
                                     <div class="col-lg-12 text-center">
                                         <div id="success"></div>
-                                        <button id="sendMessageButton" class="btn btn-custom btn-xl text-uppercase" type="submit">Send Message</button>
+                                        <button id="sendMessageButton" class="btn btn-custom btn-xl text-uppercase" type="submit"></button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="offset-sm-2 offset-md-4">
-                            <a href="https://www.linkedin.com/in/mathieu-alain/" target="_blank">
-                                <i class="fab fa-linkedin"></i> https://www.linkedin.com/in/mathieu-alain/
-                            </a>
+                    <div class="row contact-row">
+                        <div class="col-sm-4 text-center">
+                        <a href="https://www.linkedin.com/in/mathieu-alain/" target="_blank">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="offset-sm-2 offset-md-4">
-                            <a href="https://github.com/malain96/" target="_blank">
-                                <i class="fab fa-github"></i> http://github.com/malain96
-                            </a>
+                        <div class="col-sm-4 text-center" >
+                        <a href="https://github.com/malain96/" target="_blank">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="offset-sm-2 offset-md-4">
-                            <a href="mailto:alain.mathieu1996@gmail.com" target="_top">
-                                <i class="fas fa-at"></i> alain.mathieu1996@gmail.com
-                            </a>
+                        <div class="col-sm-4 text-center" >
+                        <a href="mailto:alain.mathieu1996@gmail.com" target="_top">
+                            <i class="fas fa-at fa-2x"></i>
+                        </a>
                         </div>
                     </div>
                 </div>
@@ -242,6 +238,7 @@
     <script type="application/javascript" src="js/plugins/bootstrap.min.js" ></script>
     <script type="application/javascript" src="js/plugins/jqBootstrapValidation.min.js"></script>
     <script type="application/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="application/javascript" src="js/lang.js"></script>
     <script type="application/javascript" src="js/contact.js"></script>
     <script type="application/javascript" src="js/sidebar.js"></script>
     <script type="application/javascript" src="js/about.js"></script>
