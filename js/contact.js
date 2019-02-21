@@ -33,25 +33,14 @@ $(function() {
             }).then( function (message) {
                 if(message === 'OK'){
                     // Success message
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-success')
-                        .append("<strong>language.successMessage</strong>");
-                    $('#success > .alert-success')
-                        .append('</div>');
+                    $('#alertResult').removeClass( 'alert-danger').addClass( 'alert-success').slideDown();
+                    $('#resultText').text(language.successMessage);
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 }else {
-
                     // Fail message
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text(language.sorry + firstName + language.errorMessage));
-                    $('#success > .alert-danger').append('</div>');
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
+                    $('#alertResult').removeClass( 'alert-success').addClass( 'alert-danger').slideDown();
+                    $('#resultText').text(language.sorry + firstName + language.errorMessage);
                 }
                 setTimeout(function() {
                     $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
@@ -71,7 +60,12 @@ $(function() {
     });
 });
 
+function hideAlertResult(){
+    $('#alertResult').slideUp();
+}
+
 /*When clicking on Full hide fail/success boxes */
 $('#name').focus(function() {
     $('#success').html('');
 });
+

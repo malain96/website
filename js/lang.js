@@ -51,6 +51,7 @@ function loadText (){
     $('#sendMessageButton').text(language.sendMessage);
     $('#resumeLink').attr('href',language.resumeLink);
     $('#resumeIcon').attr('title',language.altResume);
+    $('.age').text(getAge('1996/05/11'));
 }
 
 $(document).ready(function(){

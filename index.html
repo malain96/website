@@ -204,7 +204,10 @@
                                     </div>
                                     <div class="clearfix"></div>
                                     <div class="col-lg-12 text-center">
-                                        <div id="success"></div>
+                                        <div class="alert" id="alertResult" style="display: none;">
+                                            <button type="button" class="close" onclick="hideAlertResult()" aria-hidden="true">×</button>
+                                            <strong id="resultText"></strong>
+                                        </div>
                                         <button id="sendMessageButton" class="btn btn-custom btn-xl text-uppercase" type="submit"></button>
                                     </div>
                                 </div>
