@@ -21,7 +21,7 @@ function setLanguage(lang) {
 
 function loadText (){
     $('#title').text(language.title);
-    $('#menuTitle').text(language.title);
+    $('#menuTitle').text(language.menuTitle);
     $('#aboutMenu').text(language.aboutMenu);
     $('#projectsMenu').text(language.projectsMenu);
     $('#contactMenu').text(language.contactMenu);
