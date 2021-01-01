@@ -222,6 +222,7 @@ section hr{
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    overflow: hidden;
 }
 
 #page-content-wrapper{
@@ -538,43 +539,6 @@ span.about-me {
 
 
 /* Contact */
-
-#contact textarea{
-    height: 150px;
-}
-
-.form-group textarea,.form-group input{
-    color: #3F3250;
-    border-color: #3F3250;
-}
-
-.form-group textarea:focus,.form-group input:focus{
-    color: #3F3250;
-    border-color: #3F3250;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px #3F3250, 0 0 8px #22252c;
-    box-shadow: inset 0 1px 1px #3F3250, 0 0 8px #22252c;
-}
-
-.btn:focus, .btn:active {
-    border-color: #3F3250;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px #3F3250, 0 0 8px #22252c;
-    box-shadow: inset 0 1px 1px #3F3250, 0 0 8px #22252c;
-}
-
-.form-group ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #3F3250;
-}
-.form-group :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #3F3250;
-}
-.form-group ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #3F3250;
-}
-.form-group :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #3F3250;
-}
 
 .contact-row{
     padding-bottom: 5px;
